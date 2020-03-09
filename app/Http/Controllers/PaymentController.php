@@ -98,7 +98,7 @@ class PaymentController extends Controller
 
         if ($request->has('invoice_id') && $request->invoice_id != null) {
             $invoice = Invoice::find($request->invoice_id);
-            if ($invoice && $invoice->due_amount == $request->amount) {
+            if ($invoice && $invoice->due_amount = $request->amount) {
                 $invoice->status = Invoice::STATUS_COMPLETED;
                 $invoice->paid_status = Invoice::STATUS_PAID;
                 $invoice->due_amount = 0;
